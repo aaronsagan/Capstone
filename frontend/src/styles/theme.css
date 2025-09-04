@@ -1,0 +1,32 @@
+/* brand buttons */
+.btn-brand{
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+.btn-brand:hover{
+  background: var(--brand-dark);
+  border-color: var(--brand-dark);
+}
+
+/* cards & shadows */
+.card-soft{
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.08);
+}
+
+/* section spacing */
+.section{
+  padding: 60px 0;
+}
+.section-muted{
+  background: #f8fafc;
+}
+
+/* hero */
+.hero{
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: #fff;
+}
+.hero .lead{ opacity:.85; }

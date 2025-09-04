@@ -1,0 +1,75 @@
+/* navbar */
+.navbar-modern{
+  backdrop-filter: saturate(120%) blur(6px);
+  background: rgba(255,255,255,.9)!important;
+  border-bottom: 1px solid var(--border);
+}
+
+/* footer */
+.footer{
+  border-top:1px solid var(--border);
+}
+
+/* stat tiles */
+.stat-tile{
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:16px;
+  background:#fff;
+}
+.stat-tile .value{ font-weight:800; font-size:1.6rem; }
+.stat-tile .label{ color:var(--muted); font-size:.9rem; }
+
+
+/* Charity admin sidebar */
+.dashboard-sidebar {
+  min-height: 100dvh;
+  position: sticky;
+  top: 0;
+}
+
+.sidebar-toggle {
+  border: none;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: #fff;
+  padding: .8rem 1rem;
+}
+
+.sidebar-menu {
+  padding-left: 0;
+}
+
+.sidebar-label {
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: var(--muted);
+  text-transform: uppercase;
+  padding: .6rem 1rem .3rem 1rem;
+}
+
+.sidebar-link {
+  display: block;
+  padding: .65rem 1rem;
+  color: #334155;
+  border-left: 3px solid transparent;
+  transition: background .2s, color .2s, border-color .2s;
+}
+
+.sidebar-link:hover {
+  background: #f8fafc;
+  color: var(--brand);
+}
+
+.sidebar-link.active {
+  background: #eef2ff;
+  color: var(--brand);
+  border-left-color: var(--brand);
+  font-weight: 600;
+}
+
+.dashboard-sidebar .brand-card {
+  background: linear-gradient(180deg, #ffffff, #f9fbff);
+  border-bottom: 1px solid var(--border);
+}
