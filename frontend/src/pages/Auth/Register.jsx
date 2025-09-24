@@ -34,12 +34,18 @@ export default function Register() {
     setLoading(true);
     try {
       if (role === 'donor') {
-        await http.post('/auth/register', { name: fullName, email, password });
+        await http.post('/auth/register', { 
+          name: fullName, 
+          email, 
+          password,
+          password_confirmation: confirm
+        });
       } else {
         const form = new FormData();
         form.append('name', fullName);
         form.append('email', email);
         form.append('password', password);
+        form.append('password_confirmation', confirm);
         form.append('organization_name', org);
         form.append('mission', mission);
         if (doc) form.append('document', doc);
@@ -47,8 +53,11 @@ export default function Register() {
       }
       setOk('Account created! Redirecting to login…');
       setTimeout(() => nav('/login'), 900);
-    } catch {
-      setErr('Registration failed. Please check your inputs and try again.');
+    } catch (e) {
+      const resp = e?.response;
+      const msg = resp?.data?.message || (resp?.status === 422 ? 'Validation failed. Please correct the highlighted fields.' : null);
+      const firstValidationError = resp?.data?.errors && Object.values(resp.data.errors)[0]?.[0];
+      setErr(firstValidationError || msg || 'Registration failed. Please check your inputs and try again.');
     } finally {
       setLoading(false);
     }
